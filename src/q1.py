@@ -37,3 +37,12 @@ class WordPair:
         """
         self.old_word = old_word
         self.new_word = new_word
+
+def replace_word(sentence: str, *pairs: WordPair) -> str: 
+    """replaces all occurences of specified words in sentence with new specified words"""
+    words = sentence.split()
+    for pair in pairs: 
+        for i, word in enumerate(words):
+            if word == pair.old_word:
+                words[i] = pair.new_word
+    return " ".join(words)

@@ -20,3 +20,16 @@ sum_last_n_floors([Building("A", 3), Building("B", 5), Building("C", 2)], 1) -> 
 sum_last_n_floors([Building("A", 3), Building("B", 5), Building("C", 2)], 3) -> 10
 sum_last_n_floors([Building("A", 3), Building("B", 5), Building("C", 2)], 0) -> 0
 """
+
+class Building:
+    """represents a building with a name and number of floors"""
+    def __init__(self, name: str, floors: int) -> None: 
+        self.name = name 
+        self.floors = floors
+        
+def sum_last_n_floors(buildings: list[Building], n: int) -> int: 
+    """returns the sum of the number of floors in the last n Buildings in the list"""
+    if n == 0: 
+        return 0
+    return sum(building.floors for building in buildings[-n:])
+
