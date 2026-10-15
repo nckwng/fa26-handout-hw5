@@ -12,3 +12,4 @@ class TestReplaceWord:
         """Tests the replace_word function"""
         assert replace_word("drums guitar drums", WordPair("drums", "piano")) == "piano guitar piano"
         assert replace_word("hello world", WordPair("world", "ava")) == "hello ava"
+        assert replace_word("hi there", WordPair("hi", "hello"), WordPair("there", "everyone")) == "hello everyone"
